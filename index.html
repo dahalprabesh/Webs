@@ -280,9 +280,9 @@ ${actualCount}. Full Name
   let lastNames = []; // Store last generated names for download/copy
 
   function buildGoogleSearchUrl(name) {
-    const query = `site:linkedin.com/in "${name}" ;
-    return "https://www.google.com/search?q=" + encodeURIComponent(query);
-  }
+  const query = `site:linkedin.com/in "${name}"`;
+  return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+}
 
   function renderOutput(names) {
     if (!names.length) return "❌ No valid names extracted.";
