@@ -206,6 +206,8 @@
       document.getElementById('mainContent').style.display = 'block';
     }, 500);
   }
+
+  // API key should be loaded from config.js
   console.log(API_KEY); // API_KEY is defined in config.js
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
@@ -280,8 +282,9 @@ ${actualCount}. Full Name
   let lastNames = []; // Store last generated names for download/copy
 
   function buildGoogleSearchUrl(name) {
-  const query = `site:linkedin.com/in "${name}"`;
-}
+    const query = `site:linkedin.com/in "${name}"`;
+    return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  }
 
   function renderOutput(names) {
     if (!names.length) return "❌ No valid names extracted.";
