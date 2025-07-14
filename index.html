@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<script src="config.js"></script> <!-- Load your key -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Gemini CEO List Generator</title>
 <style>
@@ -205,8 +206,7 @@
       document.getElementById('mainContent').style.display = 'block';
     }, 500);
   }
-
-  const API_KEY = "AIzaSyDQ8VILzZZrhl67Or02RO88Ap77oaNAX_w"; // <<< REPLACE with your key
+  console.log(API_KEY); // API_KEY is defined in config.js
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
   async function askGemini(prompt) {
